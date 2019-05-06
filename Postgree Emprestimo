@@ -1,0 +1,46 @@
+CREATE TABLE clientes
+(
+    cpf bigint NOT NULL,
+    nome text NOT NULL,
+    email text NOT NULL,
+    PRIMARY KEY (cpf)
+)
+	
+
+CREATE TABLE simulacoes
+(
+    "numero_contrato" bigint NOT NULL,
+    "data_simulacao" text NOT NULL,
+    "data_validade_simulacao" text NOT NULL,
+    "valor_parcela" money NOT NULL,
+    "valor_contrato" money NOT NULL,
+    "quantidade_parcelas" integer NOT NULL,
+    "taxa_juros_emprestimo" double precision NOT NULL,
+    cpf text,
+    PRIMARY KEY ("numero_contrato")
+)
+	
+	
+CREATE TABLE parcelas
+(
+    "valor_parcela" money NOT NULL,
+    "data_vencimento" text NOT NULL,
+    "numero_contrato" bigint NOT NULL,
+    "numero_parcela" integer NOT NULL,
+    PRIMARY KEY ("numero_contrato", "numero_parcela")
+)
+
+
+CREATE TABLE emprestimos
+(
+    "numero_contrato" bigint NOT NULL,
+    "data_contratacao" text NOT NULL,
+    "iof_contrato" double precision NOT NULL,
+    "valor_contrato" money NOT NULL,
+    "quantidade_parcelas" integer NOT NULL,
+    "taxa_juros_emprestimo" double precision NOT NULL,
+    CONSTRAINT cliente_emprestimos_pkey PRIMARY KEY ("numero_contrato")
+)
+
+
+CREATE SEQUENCE serial START 101;
