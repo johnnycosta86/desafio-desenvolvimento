@@ -1,0 +1,21 @@
+-- JSON simular emprestimo
+
+{
+    "nome": "Richard",
+    "cpf": "93323993012",
+    "email": "richard.costa@outlook.com",
+	"valorContrato": "5000",
+	"quantidadeParcelas": "4"
+}
+
+-- JSON contratar emprestimo
+{
+    "numeroContrato": 20190506000109,
+    "dataSimulacao": "06/05/2019",
+    "dataValidadeSimulacao": "05/06/2019",
+    "valorParcela": 1000,
+    "valorContrato": 10000,
+    "quantidadeParcelas": 20,
+    "taxaJurosEmprestimo": 0.05,
+    "cpf": "35163691836"
+}
